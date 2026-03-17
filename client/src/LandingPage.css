@@ -4,13 +4,14 @@
 .landing-page {
     width: 100vw;
     height: 100vh;
-    background: #111;
+    background: var(--bg-color);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--text-main);
     position: relative;
+    transition: background 0.3s, color 0.3s;
 }
 
 /* ───────── MARVEL logo bar ───────── */
@@ -53,7 +54,7 @@
     font-size: 4rem;
     font-weight: 900;
     letter-spacing: 8px;
-    color: #fff;
+    color: var(--text-main);
 }
 
 .title-sub {

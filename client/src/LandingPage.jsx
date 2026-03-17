@@ -1,9 +1,23 @@
 import React from 'react';
 import './LandingPage.css';
 
-function LandingPage({ onEnter }) {
+function LandingPage({ onEnter, isDarkMode, setIsDarkMode }) {
     return (
         <div className="landing-page basic-landing">
+            {/* Theme Toggle */}
+            <button
+                className="theme-toggle"
+                onClick={() => setIsDarkMode(!isDarkMode)}
+                style={{
+                    position: 'absolute',
+                    right: '20px',
+                    top: '20px',
+                    zIndex: 10
+                }}
+            >
+                {isDarkMode ? '☀️ LIGHT' : '🌙 DARK'}
+            </button>
+
             {/* Top MARVEL logo */}
             <div className="marvel-logo-bar">
                 <span className="marvel-logo-text">MARVEL</span>

@@ -134,7 +134,13 @@ function App() {
   ];
 
   if (showLanding) {
-    return <LandingPage onEnter={() => setShowLanding(false)} />;
+    return (
+      <LandingPage
+        onEnter={() => setShowLanding(false)}
+        isDarkMode={isDarkMode}
+        setIsDarkMode={setIsDarkMode}
+      />
+    );
   }
 
   return (
@@ -157,25 +163,6 @@ function App() {
           }}
         >
           BACK
-        </button>
-        <button
-          className="theme-toggle"
-          onClick={() => setIsDarkMode(!isDarkMode)}
-          style={{
-            position: 'absolute',
-            left: '80px', /* Adjust this value to position it next to the BACK button */
-            top: '50%',
-            transform: 'translateY(-50%)',
-            background: 'transparent',
-            border: '1px solid var(--avengers-red)',
-            color: 'var(--avengers-red)',
-            padding: '8px 16px',
-            borderRadius: '4px',
-            cursor: 'pointer',
-            fontFamily: 'Orbitron, sans-serif'
-          }}
-        >
-          {isDarkMode ? '☀️ LIGHT' : '🌙 DARK'}
         </button>
         <h1 className="title">Avengers Language Learner</h1>
         <p className="subtitle">Translate across the multiverse.</p>
