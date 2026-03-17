@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@400;500&display=swap');
+
+:root {
+  --avengers-red: #e62429;
+  --avengers-dark-red: #af1b1f;
+  --bg-color: #0f1115;
+  --text-main: #f5f5f5;
+  --card-bg: #1a1e24;
+  --border-color: #2a2e34;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+h1, h2, h3, .btn-primary, .btn-secondary {
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Base App Setup */
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--avengers-red);
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 0 0 10px rgba(230, 36, 41, 0.7);
+}
+
+.subtitle {
+  color: #a0a0a0;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* Main Layout */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Translation Area */
+.translation-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .translation-area {
+    grid-template-columns: 1fr;
+  }
+}
+
+.box-container {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.box-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--avengers-red);
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+select {
+  background: #2a2e34;
+  color: white;
+  border: 1px solid #4a4e54;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+  outline: none;
+}
+
+select:focus {
+  border-color: var(--avengers-red);
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  font-family: 'Roboto', sans-serif;
+  resize: none;
+  outline: none;
+}
+
+textarea::placeholder {
+  color: #6a6e74;
+}
+
+/* Action Center */
+.action-center {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.btn-primary {
+  background: var(--avengers-red);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(230, 36, 41, 0.4);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--avengers-dark-red);
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(230, 36, 41, 0.8);
+}
+
+.btn-primary:disabled {
+  background: #555;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn-icon {
+  background: transparent;
+  color: white;
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+}
+
+.btn-icon:hover {
+  background: #2a2e34;
+  border-color: var(--avengers-red);
+  color: var(--avengers-red);
+}
+
+.btn-jarvis {
+  border-color: #00d2ff;
+  color: #00d2ff;
+}
+
+.btn-jarvis:hover {
+  background: rgba(0, 210, 255, 0.1);
+  border-color: #00d2ff;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+}
+
+.listening-indicator {
+  color: #00d2ff;
+  font-weight: bold;
+  animation: pulse 1s infinite alternate;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Common Phrases */
+.phrases-section {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.phrases-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--avengers-red);
+}
+
+.phrases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.phrase-card {
+  background: #2a2e34;
+  padding: 1rem;
+  border-radius: 4px;
+  border-left: 3px solid var(--avengers-red);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.phrase-card:hover {
+  background: #3a3e44;
+}
+
+.phrase-source {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.phrase-target {
+  color: #a0a0a0;
+  font-style: italic;
+}
+
+@keyframes pulse {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}
+
+/* Loading overlay */
+.loading-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Orbitron', sans-serif;
+  color: var(--avengers-red);
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  animation: pulse 1s infinite alternate;
+}
