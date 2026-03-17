@@ -2,313 +2,115 @@
 
 /* ───────── Base ───────── */
 .landing-page {
-    position: relative;
     width: 100vw;
     height: 100vh;
-    background: #0a0a0a;
-    overflow: hidden;
+    background: #111;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-/* ───────── Particle Canvas ───────── */
-.particle-canvas {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-}
-
-/* ───────── Red radial glow ───────── */
-.red-glow {
-    position: absolute;
-    bottom: -200px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 900px;
-    height: 500px;
-    background: radial-gradient(ellipse at center, rgba(230, 36, 41, 0.45) 0%, transparent 70%);
-    z-index: 1;
-    pointer-events: none;
-    animation: glowPulse 3s ease-in-out infinite alternate;
-}
-
-@keyframes glowPulse {
-    from {
-        opacity: 0.6;
-        transform: translateX(-50%) scale(1);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(-50%) scale(1.08);
-    }
+    color: white;
+    position: relative;
 }
 
 /* ───────── MARVEL logo bar ───────── */
 .marvel-logo-bar {
     position: absolute;
-    top: 28px;
+    top: 40px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 10;
 }
 
 .marvel-logo-text {
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     font-weight: 900;
-    letter-spacing: 10px;
+    letter-spacing: 5px;
     color: #fff;
     background: #e62429;
-    padding: 6px 24px;
-    border-radius: 3px;
-}
-
-/* ───────── Hero Silhouettes ───────── */
-.hero-silhouettes {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    z-index: 2;
-    padding: 0 40px;
-    pointer-events: none;
-}
-
-.hero-figure {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    opacity: 0.65;
-    filter: drop-shadow(0 0 18px rgba(230, 36, 41, 0.45));
-    transition: opacity 0.3s;
-}
-
-.hero-figure:hover {
-    opacity: 0.9;
-}
-
-.hero-figure svg {
-    width: 70px;
-    height: auto;
-}
-
-.hero-name {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.55rem;
-    letter-spacing: 2px;
-    color: #ffffff88;
-    margin-top: 6px;
-    text-transform: uppercase;
+    padding: 8px 30px;
 }
 
 /* ───────── Center Content ───────── */
 .landing-center {
-    position: relative;
-    z-index: 5;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.8rem;
-    padding-bottom: 120px;
-}
-
-/* Big glowing A logo */
-.avengers-a-logo {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 7rem;
-    font-weight: 900;
-    color: transparent;
-    -webkit-text-stroke: 3px #e62429;
-    text-shadow:
-        0 0 20px rgba(230, 36, 41, 0.8),
-        0 0 60px rgba(230, 36, 41, 0.4);
-    line-height: 1;
-    animation: aGlow 2s ease-in-out infinite alternate;
-    user-select: none;
-}
-
-@keyframes aGlow {
-    from {
-        -webkit-text-stroke: 3px #e62429;
-        text-shadow: 0 0 20px rgba(230, 36, 41, 0.8), 0 0 60px rgba(230, 36, 41, 0.4);
-    }
-
-    to {
-        -webkit-text-stroke: 3px #ff5555;
-        text-shadow: 0 0 40px rgba(230, 36, 41, 1), 0 0 100px rgba(230, 36, 41, 0.7);
-    }
+    gap: 1.5rem;
+    padding: 2rem;
 }
 
 .landing-title {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
-    line-height: 1.1;
+    gap: 5px;
 }
 
 .title-avengers {
     font-family: 'Orbitron', sans-serif;
-    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    font-size: 4rem;
     font-weight: 900;
-    letter-spacing: 12px;
+    letter-spacing: 8px;
     color: #fff;
-    text-transform: uppercase;
-    text-shadow: 0 2px 30px rgba(230, 36, 41, 0.6);
-    animation: slideInDown 0.8s ease-out both;
 }
 
 .title-sub {
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(0.9rem, 2.5vw, 1.4rem);
-    font-weight: 400;
-    letter-spacing: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 4px;
     color: #e62429;
     text-transform: uppercase;
-    animation: slideInDown 0.8s 0.15s ease-out both;
-}
-
-.landing-quote {
-    font-family: 'Roboto', sans-serif;
-    font-style: italic;
-    font-size: 1.1rem;
-    color: #aaa;
-    animation: fadeIn 1s 0.3s ease-out both;
 }
 
 .landing-desc {
-    max-width: 520px;
     font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    font-weight: 300;
-    color: #888;
-    line-height: 1.6;
-    animation: fadeIn 1s 0.45s ease-out both;
+    font-size: 1.1rem;
+    color: #aaa;
+    max-width: 400px;
+    margin-bottom: 1rem;
 }
 
 /* ───────── Enter Button ───────── */
-.enter-btn {
-    margin-top: 1rem;
-    background: transparent;
-    border: 2px solid #e62429;
-    color: #fff;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    padding: 0;
-    cursor: pointer;
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
-    animation: fadeIn 1s 0.6s ease-out both;
-    transition: box-shadow 0.3s;
-}
-
-.enter-btn::before {
-    content: '';
-    position: absolute;
-    inset: 0;
+.basic-enter-btn {
     background: #e62429;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.35s ease;
-    z-index: 0;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s;
+    border-radius: 4px;
 }
 
-.enter-btn:hover::before {
-    transform: scaleX(1);
-}
-
-.enter-btn:hover {
-    box-shadow: 0 0 30px rgba(230, 36, 41, 0.7);
-}
-
-.enter-btn-inner {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 36px;
-}
-
-.arrow-icon {
-    width: 20px;
-    height: 20px;
-    transition: transform 0.3s;
-}
-
-.enter-btn:hover .arrow-icon {
-    transform: translateX(5px);
+.basic-enter-btn:hover {
+    background: #c21a20;
 }
 
 /* ───────── Footer ───────── */
 .landing-footer {
     position: absolute;
     bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-    display: flex;
-    gap: 8px;
-    align-items: center;
     font-family: 'Roboto', sans-serif;
-    font-size: 0.75rem;
-    color: #444;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.footer-brand {
-    color: #e62429;
-    font-weight: 600;
-}
-
-/* ───────── Animations ───────── */
-@keyframes slideInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    font-size: 0.9rem;
+    color: #777;
 }
 
 /* ───────── Responsive ───────── */
-@media (max-width: 640px) {
-    .hero-figure svg {
-        width: 45px;
+@media (max-width: 600px) {
+    .title-avengers {
+        font-size: 2.5rem;
     }
 
-    .avengers-a-logo {
-        font-size: 4rem;
+    .title-sub {
+        font-size: 1rem;
     }
 
-    .hero-silhouettes {
-        padding: 0 10px;
+    .basic-enter-btn {
+        font-size: 1rem;
+        padding: 12px 24px;
     }
 }
