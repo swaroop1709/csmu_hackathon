@@ -3,7 +3,7 @@ This project was developed during a hackathon at CSMU College, where our team se
 We created an **Avengers-themed Language Translator** that combines powerful translation capabilities with an interactive and dynamic user interface inspired by Marvel superheroes.
 
 Team Members:-
-Swaroop Dhuri
-Sudhanshu Nijap
-Sheldon Patel
+Swaroop Dhuri,
+Sudhanshu Nijap,
+Sheldon Patel,
 Joy Nigrel
